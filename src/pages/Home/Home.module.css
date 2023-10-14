@@ -1,0 +1,47 @@
+.home{
+
+}
+
+.home__header{
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.home__filter{
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 0px 4px;
+}
+
+/*---- Категории ----*/
+
+.home_categories{
+    background-color: #fff;
+    padding: 11px 16px;
+    margin-top: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home_categories__text h4{
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.home_categories__text p{
+    font-weight: 300;
+    color: #787878;
+    font-size: clamp(10px, 10px, 16px);
+}
+
+/*---- Cards ----*/
+
+.home__cards{
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 178px); /* Определяем длину ячейки */
+    gap: 15px;
+}

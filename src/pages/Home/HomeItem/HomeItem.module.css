@@ -1,0 +1,44 @@
+.card{
+    background: #fff;
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card img{
+    max-width: 170px;
+    padding: 8px 0px;
+}
+
+.card__text{
+    padding: 0px 13px;
+}
+
+.card__text h4{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+}
+
+.card__text p{
+    font-size: 10px;
+    padding-top: 3px;
+    font-weight: 300;
+    line-height: 16px;
+}
+
+.card__button{
+    margin-top: 10px;
+    border-radius: 12px 12px 0px 0px;
+    background: #037EE5;
+    width: 90%;
+    padding: 5px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.card__button > span{
+    font-weight: 300;
+}
