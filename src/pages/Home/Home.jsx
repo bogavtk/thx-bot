@@ -26,30 +26,35 @@ export const Home = () => {
             text: "Женские кроссовки STREETBEAT Shady",
             price: "9 499",
             img: img,
+            size: 37
         },
         {
             id: 2,
             text: "Женские кроссовки STREETBEAT Shady",
             price: "9 499",
             img: img,
+            size: 37
         },
         {
             id: 3,
             text: "Женские кроссовки STREETBEAT Shady",
             price: "9 499",
             img: img,
+            size: 37
         },
         {
             id: 4,
             text: "Женские кроссовки STREETBEAT Shady",
             price: "9 499",
             img: img,
+            size: 37
         },
         {
             id: 5,
             text: "Женские кроссовки STREETBEAT Shady",
             price: "9 499",
             img: img,
+            size: 37
         },
     ]
 
@@ -94,12 +99,10 @@ export const Home = () => {
 
             </section>
 
-        </main>
-
             {   !isStorageEmpty &&
-                <BottomButton link={'/bin'} text="Корзина"/>
+                    <BottomButton link={'/bin'} text="Корзина"/>
             }
-
+        </main>
         </>
     );
 };

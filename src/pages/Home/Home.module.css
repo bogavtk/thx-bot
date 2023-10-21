@@ -1,5 +1,5 @@
 .home{
-
+    position: relative
 }
 
 .home__header{
@@ -42,6 +42,12 @@
 .home__cards{
     margin-top: 15px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, 178px); /* Определяем длину ячейки */
+    grid-template-columns: repeat(auto-fill, 47%); /* Определяем длину ячейки */
     gap: 15px;
+}
+
+.wrapperButton {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }

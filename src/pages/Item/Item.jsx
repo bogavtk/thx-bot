@@ -137,17 +137,14 @@ export const Item = () => {
                 <p>{itemData.descriptionText}</p>
             </section>
 
-            <section className={cl.item__button_wrap}>
-                <button className={cl.item__button} onClick={handleButtonClick}>
-                    + <span>Добавить</span>
-                </button>
-            </section>
-
-
-
-            {   !isStorageEmpty &&
+            <div className={cl.twoButton}>
+                <section className={cl.item__button_wrap}>
+                    <button className={cl.item__button} onClick={handleButtonClick}>
+                        <span>+ Добавить</span>
+                    </button>
+                </section>
                 <BottomButton link={'/bin'} text="Корзина"/>
-            }
+            </div>
         </main>
     );
 };

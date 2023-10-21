@@ -1,6 +1,9 @@
 .bin{
     padding: 20px 12px;
-
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100vh;
 }
 
 .bin__header{
@@ -33,18 +36,29 @@
     display: flex;
     background-color: #fff;
     align-items: center;
+    justify-content: space-between;
 }
 
-.bin_item > img{
+.bin_item__left {
+    display: flex;
+    align-items: center;
+}
+
+.bin_item__left > img{
     width: 85px;
     height: 85px;
+}
+
+.bin__text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .bin__text > p{
     font-size: 10px;
     font-weight: 300;
     line-height: 16px;
-
 }
 
 .bin_item > h4{
@@ -52,4 +66,40 @@
     font-style: normal;
     font-weight: 600;
     line-height: 22px;
+}
+
+.sumPrice {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ABABAB;
+}
+
+.title {
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 16px;
+}
+
+.numberPrice {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.noOrders {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    gap: 20px;
+}
+.noOrders > img {
+    width: 56px;
+    height: 56px;
+}
+
+.noOrders > span {
+    font-size: 16px;
+    line-height: 19px;
 }
