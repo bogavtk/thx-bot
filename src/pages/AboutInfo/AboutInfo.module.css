@@ -1,0 +1,39 @@
+.wrapperAboutInfo {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.wrapperAboutInfo img {
+    width: max-content;
+}
+
+.blockInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.twoWrappInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.wrappInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.wrappIcon {
+    display: flex;
+    gap: 5px;
+}
+
+.block {
+    display: flex;
+    justify-content: space-between;
+}

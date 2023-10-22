@@ -8,7 +8,7 @@
 }
 
 .card img{
-    max-width: 170px;
+    max-width: 100%;
     padding: 8px 0px;
 }
 
@@ -31,7 +31,8 @@
 
 .card__button{
     margin-top: 10px;
-    border-radius: 12px 12px 0px 0px;
+    margin-bottom: 10px;
+    border-radius: 12px;
     background: #037EE5;
     width: 90%;
     padding: 5px;

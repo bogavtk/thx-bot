@@ -1,0 +1,24 @@
+.wrapperFilter {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.titleFilter {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.content {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footerButton {
+    flex: 0 0 auto;
+}

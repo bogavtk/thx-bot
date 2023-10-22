@@ -1,0 +1,21 @@
+.orders {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+}
+
+.titleOrders {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    margin-top: 20px;
+    margin-left: 21px;
+}
+
+.blockOrders {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

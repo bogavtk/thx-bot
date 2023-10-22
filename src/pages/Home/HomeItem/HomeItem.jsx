@@ -31,7 +31,7 @@ export const HomeItem = ({ card }) => {
         <section className={cl.card} onClick={handleCardClick}>
             <img src={card.img} alt="Картинка"/>
             <div className={cl.card__text}>
-                <h4>{card.price}</h4>
+                <h4>{card.price} ₽</h4>
                 <p>{card.text}</p>
             </div>
             <button className={cl.card__button} onClick={handleButtonClick}>
