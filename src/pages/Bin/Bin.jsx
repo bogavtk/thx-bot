@@ -1,6 +1,6 @@
 import cl from './Bin.module.css';
 import {useNavigate} from "react-router-dom";
-import {BottomButton} from "../../components/ BottomButton/BottomButton";
+import {BottomButton} from "../../components/BottomButton/BottomButton";
 import {useEffect, useState} from "react";
 import noorders from '../../assets/basket.png'
 

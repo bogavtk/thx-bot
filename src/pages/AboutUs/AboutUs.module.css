@@ -1,0 +1,35 @@
+.wrapperAbout {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.wrapperAbout img {
+    width: max-content;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+}
+
+.titleBold {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.titleThin, .link {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.link {
+    color: #037EE5;
+}

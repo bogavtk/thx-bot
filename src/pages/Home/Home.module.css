@@ -16,14 +16,18 @@
 
 /*---- Категории ----*/
 
+.wrapperCategories {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .home_categories{
     background-color: #fff;
     padding: 11px 16px;
     margin-top: 15px;
     border-radius: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
 }
 
 .home_categories__text h4{

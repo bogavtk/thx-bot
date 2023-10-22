@@ -1,6 +1,6 @@
 import cl from './Item.module.css';
 import {useNavigate, useParams} from 'react-router-dom';
-import {BottomButton} from "../../components/ BottomButton/BottomButton";
+import {BottomButton} from "../../components/BottomButton/BottomButton";
 import {useEffect, useState} from "react";
 import img from "../../assets/item/item_img_1.jpg";
 import img2 from "../../assets/item/item_img_2.jpg";

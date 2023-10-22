@@ -1,0 +1,63 @@
+.blockFilter {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4px;
+    border-bottom: solid 1px #ABABAB;
+}
+
+.nameFilter {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+}
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    right: 5px;
+    top: -12px;
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    border-radius: 50%;
+    border: solid 2px #2196F3;
+}
+.container:hover input ~ .checkmark {
+    background-color: white;
+}
+
+.container input:checked ~ .checkmark {
+    border: solid 2px #2196F3;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+.container .checkmark:after {
+    top: 4px;
+    left: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #2196F3;
+}
