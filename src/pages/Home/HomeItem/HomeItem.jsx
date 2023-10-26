@@ -2,6 +2,8 @@ import cl from './HomeItem.module.css';
 import { useNavigate } from "react-router-dom";
 import {useState} from "react";
 export const HomeItem = ({ card }) => {
+
+    const [count, setCount] = useState(0)
     const navigate = useNavigate();
 
     const handleCardClick = () => {
@@ -9,6 +11,8 @@ export const HomeItem = ({ card }) => {
     };
 
     const handleButtonClick = (event) => {
+        setCount(count => count + 1)
+
         event.stopPropagation();
         let dataArray = [];
         if (localStorage.getItem('items')) {
@@ -20,11 +24,11 @@ export const HomeItem = ({ card }) => {
         const isItemExist = dataArray.some(item => item.id === itemId);
 
         // Шаг 3: Если объект с таким id не существует, добавляем его в массив
-        if (!isItemExist) {
+        // if (!isItemExist) {
             dataArray.push(card);
             // Шаг 4: Обновляем localStorage с обновленным массивом
             localStorage.setItem('items', JSON.stringify(dataArray));
-        }
+        // }
     };
 
     return (
@@ -34,9 +38,20 @@ export const HomeItem = ({ card }) => {
                 <h4>{card.price} ₽</h4>
                 <p>{card.text}</p>
             </div>
-            <button className={cl.card__button} onClick={handleButtonClick}>
-                + <span>Добавить</span>
-            </button>
+            
+            {
+                count > 0
+                ?
+                    <button className={cl.card__button} onClick={handleButtonClick}>
+                        + <span>{count}</span>
+                    </button>
+
+                    :
+                    <button className={cl.card__button} onClick={handleButtonClick}>
+                        + <span>Добавить</span>
+                    </button>
+            }
+
         </section>
     );
 };
