@@ -9,11 +9,14 @@
 
 .card img{
     max-width: 100%;
-    padding: 8px 0px;
+    min-height: 200px;
+    padding: 8px 10px;
+    flex: 1 0 auto;
 }
 
 .card__text{
     padding: 0px 13px;
+    width: 100%;
 }
 
 .card__text h4{
