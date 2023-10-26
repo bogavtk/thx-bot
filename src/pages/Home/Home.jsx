@@ -1,7 +1,14 @@
 import cl from './Home.module.css';
 import {SearchBar} from "./SearchBar/SearchBar";
 import {HomeItem} from "./HomeItem/HomeItem";
-import img from '../../assets/item/item_img_1.jpg';
+import NikeAirForce107 from '../../assets/item/Nike Air Force 107.jpg';
+import NikeAirForce1HighBootSummitWhite from '../../assets/item/Nike Air Force 1 High Boot Summit White.png'
+import NikeAirJordan1LowDesertBerryGS from '../../assets/item/Nike Air Jordan 1 Low Desert Berry (GS).png'
+import NikeAirJordan1LowInsideOutCreamWhiteLightGreyGS from '../../assets/item/Nike Air Jordan 1 Low Inside Out Cream White Light Grey (GS).jpg'
+import NikeAirJordan1LowPanda2023W from '../../assets/item/Nike Air Jordan 1 Low Panda (2023) (W).png'
+import NikeAirJordan1LowSECraftTaupeHaze from '../../assets/item/Nike Air Jordan 1 Low SE Craft Taupe Haze.png'
+import NikeAirJordan1LowSmokeGrey from '../../assets/item/Nike Air Jordan 1 Low Smoke Grey.jpg'
+import img from '../../assets/item/item_img_1.jpg'
 import {BottomButton} from "../../components/BottomButton/BottomButton";
 import {useState, useEffect} from "react";
 import {NavLink} from "react-router-dom";
@@ -24,37 +31,44 @@ export const Home = () => {
     const dataCards = [
         {
             id: 1,
-            text: "Женские кроссовки STREETBEAT Shady",
-            price: "9 499",
-            img: img,
+            text: "Nike Air Force 1 '07",
+            price: "19 900",
+            img: NikeAirForce107,
             size: 37
         },
         {
             id: 2,
-            text: "Женские кроссовки STREETBEAT Shady",
-            price: "9 499",
-            img: img,
+            text: "Nike Air Force 1 High Boot Summit White",
+            price: "27 900",
+            img: NikeAirForce1HighBootSummitWhite,
             size: 37
         },
         {
             id: 3,
-            text: "Женские кроссовки STREETBEAT Shady",
-            price: "9 499",
-            img: img,
+            text: "Nike Air Jordan 1 Low Desert Berry (GS)",
+            price: "24 900",
+            img: NikeAirJordan1LowDesertBerryGS,
             size: 37
         },
         {
             id: 4,
-            text: "Женские кроссовки STREETBEAT Shady",
-            price: "9 499",
-            img: img,
+            text: "Nike Air Jordan 1 Low Panda (2023) (W)",
+            price: "24 900",
+            img: NikeAirJordan1LowPanda2023W,
             size: 37
         },
         {
             id: 5,
-            text: "Женские кроссовки STREETBEAT Shady",
-            price: "9 499",
-            img: img,
+            text: "Nike Air Jordan 1 Low SE Craft Taupe Haze",
+            price: "29 900",
+            img: NikeAirJordan1LowSECraftTaupeHaze,
+            size: 37
+        },
+        {
+            id: 6,
+            text: "Nike Air Jordan 1 Low Smoke Grey",
+            price: "29 900",
+            img: NikeAirJordan1LowSmokeGrey,
             size: 37
         },
     ]
