@@ -7,7 +7,11 @@ export const AboutInfo = () => {
     return (
         <div className={cl.wrapperAboutInfo}>
             <div className={cl.wrappInfo}>
-                <img src={frame}/>
+                <iframe
+                    src="https://yandex.ru/map-widget/v1/?um=constructor%3Aad8b70531ab4b7c9294e67c981d072204813e1cc65f9eb053987b17ec7bc1ed7&amp;source=constructor"
+                    height="240" frameBorder="0">
+
+                </iframe>
                 <div className={cl.blockInfo}>
                     <div className={cl.wrappIcon}>
                         <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -15,7 +19,7 @@ export const AboutInfo = () => {
                                 d="M6.00033 7.00004C5.26699 7.00004 4.66699 6.40004 4.66699 5.66671C4.66699 4.93337 5.26699 4.33337 6.00033 4.33337C6.73366 4.33337 7.33366 4.93337 7.33366 5.66671C7.33366 6.40004 6.73366 7.00004 6.00033 7.00004ZM10.0003 5.80004C10.0003 3.38004 8.23366 1.66671 6.00033 1.66671C3.76699 1.66671 2.00033 3.38004 2.00033 5.80004C2.00033 7.36004 3.30033 9.42671 6.00033 11.8934C8.70033 9.42671 10.0003 7.36004 10.0003 5.80004ZM6.00033 0.333374C8.80033 0.333374 11.3337 2.48004 11.3337 5.80004C11.3337 8.01337 9.55366 10.6334 6.00033 13.6667C2.44699 10.6334 0.666992 8.01337 0.666992 5.80004C0.666992 2.48004 3.20033 0.333374 6.00033 0.333374Z"
                                 fill="#037EE5"/>
                         </svg>
-                        <BlockText firstTitle={'Адрес: '} secondTitle={'ул. Сибгатуллина д. 17 кв. 23'}/>
+                        <BlockText firstTitle={'Адрес: '} secondTitle={'ул.Петербургская, 1, Казань'}/>
                     </div>
 
                     <div className={cl.block}>
