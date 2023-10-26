@@ -17,6 +17,7 @@ export const Filter = ({namePage, listFilters}) => {
                 </div>
             </div>
             <div className={cl.footerButton}>
+                <BottomButton text={'Назад'} link={'/'}/>
                 <BottomButton text={'Посмотреть'} link={'/'}/>
             </div>
         </main>

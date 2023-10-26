@@ -86,6 +86,7 @@ export const Bin = () => {
                     <div className={cl.noOrders}>
                         <img src={noorders}/>
                         <span>У вас пока нет заказов</span>
+                        <BottomButton link={'/'} text={'Назад'}/>
                     </div>
 
             }

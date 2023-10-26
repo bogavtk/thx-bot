@@ -120,9 +120,10 @@ export const Home = () => {
 
                 </section>
 
-                {!isStorageEmpty &&
+                <div className={cl.wrapperFixedButton}>
                     <BottomButton link={'/bin'} text="Корзина"/>
-                }
+                </div>
+
             </main>
         </>
     );
