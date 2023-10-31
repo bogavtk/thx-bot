@@ -31,42 +31,48 @@ export const Home = () => {
     const dataCards = [
         {
             id: 1,
-            text: "Nike Air Force 1 '07",
+            name: "Nike Air Force 1 '07",
+            desc: "Легендарные. Классические. Белые Air Force",
             price: "19 900",
             img: NikeAirForce107,
             size: 37
         },
         {
             id: 2,
-            text: "Nike Air Force 1 High Boot Summit White",
+            name: "Nike Air Force 1 High Boot Summit White",
+            desc: "Высокие белые ботинки на шнуровке. Идеальное сочетание стиля и функциональности.",
             price: "27 900",
             img: NikeAirForce1HighBootSummitWhite,
             size: 37
         },
         {
             id: 3,
-            text: "Nike Air Jordan 1 Low Desert Berry (GS)",
+            name: "Nike Air Jordan 1 Low Desert Berry (GS)",
+            desc: "Детские Nike Air Jordan 1 Low Desert Berry",
             price: "24 900",
             img: NikeAirJordan1LowDesertBerryGS,
             size: 37
         },
         {
             id: 4,
-            text: "Nike Air Jordan 1 Low Panda (2023) (W)",
+            name: "Nike Air Jordan 1 Low Panda (2023) (W)",
+            desc: "Женские Nike Air Jordan 1 Low Panda",
             price: "24 900",
             img: NikeAirJordan1LowPanda2023W,
             size: 37
         },
         {
             id: 5,
-            text: "Nike Air Jordan 1 Low SE Craft Taupe Haze",
+            name: "Nike Air Jordan 1 Low SE Craft Taupe Haze",
             price: "29 900",
+            desc: "Женские Nike Air Jordan 1 Low Panda",
             img: NikeAirJordan1LowSECraftTaupeHaze,
             size: 37
         },
         {
             id: 6,
-            text: "Nike Air Jordan 1 Low Smoke Grey",
+            name: "Nike Air Jordan 1 Low Smoke Grey",
+            desc: "Классические кеды Nike Air Jordan 1 Low Smoke Grey с серым верхом и белой подошвой.",
             price: "29 900",
             img: NikeAirJordan1LowSmokeGrey,
             size: 37

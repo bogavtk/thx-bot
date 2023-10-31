@@ -34,23 +34,26 @@ export const HomeItem = ({ card }) => {
     return (
         <section className={cl.card} onClick={handleCardClick}>
             <img src={card.img} alt="Картинка"/>
-            <div className={cl.card__text}>
-                <h4>{card.price} ₽</h4>
-                <p>{card.text}</p>
+            <div className={cl.blockMainText}>
+                <span className={cl.name}>{card.name}</span>
+                <span className={cl.desc}>{card.desc}</span>
             </div>
-            
-            {
-                count > 0
-                ?
-                    <button className={cl.card__button} onClick={handleButtonClick}>
-                        + <span>{count}</span>
-                    </button>
 
-                    :
-                    <button className={cl.card__button} onClick={handleButtonClick}>
-                        + <span>Добавить</span>
-                    </button>
-            }
+            <div className={cl.bottomCard}>
+                <h4 className={cl.price}>{card.price} ₽</h4>
+                {
+                    count > 0
+                        ?
+                        <button className={cl.card__button} onClick={handleButtonClick}>
+                            + <span>{count}</span>
+                        </button>
+
+                        :
+                        <button className={cl.card__button} onClick={handleButtonClick}>
+                            + <span>Добавить</span>
+                        </button>
+                }
+            </div>
 
         </section>
     );

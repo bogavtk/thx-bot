@@ -16,20 +16,18 @@
     gap: 10px;
 }
 
-.twoWrappInfo {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
 .wrappInfo {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background-color: white;
+    padding: 16px;
+    border-radius: 20px;
 }
 
 .wrappIcon {
     display: flex;
+    align-items: center;
     gap: 5px;
 }
 
@@ -42,3 +40,8 @@
     width: 100%;
     height: 240px;
 }
+
+.wrapperBlockText {
+    width: 100%;
+}
+

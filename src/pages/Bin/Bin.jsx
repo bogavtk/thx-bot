@@ -3,6 +3,18 @@ import {useNavigate} from "react-router-dom";
 import {BottomButton} from "../../components/BottomButton/BottomButton";
 import {useEffect, useState} from "react";
 import noorders from '../../assets/basket.png'
+import {CardProduct} from "./CardProduct/CardProduct";
+
+// Swiper
+
+import {Navigation, Pagination} from 'swiper/modules';
+import {Swiper, SwiperSlide} from 'swiper/react';
+// Import Swiper styles
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import img from "../../assets/item/item_img_1.jpg";
 
 export const Bin = () => {
     const navigate = useNavigate();
@@ -30,7 +42,7 @@ export const Bin = () => {
         <main className={cl.bin}>
             {
                 localStorage.getItem('items')
-                ?
+                    ?
                     <>
                         <section className={cl.bin__header}>
                             <div className={cl.bin_back} onClick={() => navigate('/')}>
@@ -46,33 +58,76 @@ export const Bin = () => {
                             <button onClick={() => {
                                 localStorage.clear();
                                 setIsEmpty(false)
-                            }}>Очистить</button>
+                            }}>Очистить
+                            </button>
                         </section>
 
+                        {/*<Swiper*/}
+                        {/*    modules={[Navigation, Pagination ]}*/}
+                        {/*    slidesPerView={1}*/}
+                        {/*    pagination={true}*/}
+                        {/*    loop={true}*/}
+                        {/*    spaceBetween={0}*/}
+                        {/*    className={cl.swiper}*/}
+                        {/*>*/}
+                        {/*    {itemData.imgs.map((image, index) => (*/}
+                        {/*        <SwiperSlide key={index} className={cl.swiper_slide}>*/}
+                        {/*            <img src={image} alt={`Image ${index}`} className={cl.item__img}/>*/}
+                        {/*        </SwiperSlide>*/}
+                        {/*    ))}*/}
+
+                        {/*</Swiper>*/}
+
                         <ul className={cl.bin__list}>
-                            {binData.map((item, index) => {
-                                return (
-                                    <li key={index} className={cl.bin_item}>
-                                        <div className={cl.bin_item__left}>
-                                            <img src={item.img} />
-                                            <div className={cl.bin__text}>
-                                                <p>{item.text}</p>
-                                                <p>Размер: {item.size}</p>
-                                            </div>
-                                        </div>
-                                        <h4>{item.price} ₽</h4>
-                                        <button className={cl.deleteButton}
-                                                onClick={() => {deleteItem(item)}}
-                                        >
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                                <path fill-rule="evenodd"
-                                                      d="M24.707 8.707a1 1 0 0 0-1.414-1.414L16 14.586 8.707 7.293a1 1 0 0 0-1.414 1.414L14.586 16l-7.293 7.293a1 1 0 1 0 1.414 1.414L16 17.414l7.293 7.293a1 1 0 0 0 1.414-1.414L17.414 16l7.293-7.293Z"
-                                                      clip-rule="evenodd"/>
-                                            </svg>
-                                        </button>
-                                    </li>
-                                )
-                            })}
+                            {binData.map((item, index) => (
+                                <div className={cl.wrappTest}>
+                                    <CardProduct
+                                        index={index}
+                                        item={item}
+                                        deleteItem={deleteItem}
+                                        img={item.img}
+                                        name={item.name}
+                                        price={item.price}
+                                        size={item.size}
+                                    />
+                                    <BottomButton text={'Тестовая кнопка'}/>
+                                </div>
+
+
+                                // <Swiper
+                                //     modules={[Navigation]}
+                                //     slidesPerView={1}
+                                //     pagination={false}
+                                //     loop={false}
+                                //     spaceBetween={0}
+                                //     className={cl.swiper}
+                                // >
+                                //     <SwiperSlide>
+                                //         <CardProduct
+                                //             index={index}
+                                //             item={item}
+                                //             deleteItem={deleteItem}
+                                //             img={item.img}
+                                //             name={item.name}
+                                //             price={item.price}
+                                //             size={item.size}
+                                //         />
+                                //     </SwiperSlide>
+                                //     <SwiperSlide>
+                                //         <CardProduct
+                                //             index={index}
+                                //             item={item}
+                                //             deleteItem={deleteItem}
+                                //             img={item.img}
+                                //             name={item.name}
+                                //             price={item.price}
+                                //             size={item.size}
+                                //         />
+                                //     </SwiperSlide>
+                                // </Swiper>
+
+
+                            ))}
                         </ul>
 
                         <div className={cl.sumPrice}>
@@ -93,5 +148,6 @@ export const Bin = () => {
 
 
         </main>
-    );
+    )
+        ;
 };
