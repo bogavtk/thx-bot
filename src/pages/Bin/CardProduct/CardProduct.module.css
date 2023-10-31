@@ -14,25 +14,7 @@
     align-items: center;
 }
 
-.deleteButton {
-    height: 100%;
-    width: 90px;
-    background-color: red;
-    cursor: pointer;
-    border-bottom-right-radius: 15px;
-    border-top-right-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
 
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 16px;
-    color: white;
-    position: absolute;
-    right: -90px;
-}
 
 .bin_item__left > img{
     width: 85px;
