@@ -5,15 +5,7 @@ import {useEffect, useState} from "react";
 import noorders from '../../assets/basket.png'
 import {CardProduct} from "./CardProduct/CardProduct";
 
-// Swiper
 
-import {Navigation, Pagination} from 'swiper/modules';
-import {Swiper, SwiperSlide} from 'swiper/react';
-// Import Swiper styles
-
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 import img from "../../assets/item/item_img_1.jpg";
 
 export const Bin = () => {
@@ -61,23 +53,6 @@ export const Bin = () => {
                             }}>Очистить
                             </button>
                         </section>
-
-                        {/*<Swiper*/}
-                        {/*    modules={[Navigation, Pagination ]}*/}
-                        {/*    slidesPerView={1}*/}
-                        {/*    pagination={true}*/}
-                        {/*    loop={true}*/}
-                        {/*    spaceBetween={0}*/}
-                        {/*    className={cl.swiper}*/}
-                        {/*>*/}
-                        {/*    {itemData.imgs.map((image, index) => (*/}
-                        {/*        <SwiperSlide key={index} className={cl.swiper_slide}>*/}
-                        {/*            <img src={image} alt={`Image ${index}`} className={cl.item__img}/>*/}
-                        {/*        </SwiperSlide>*/}
-                        {/*    ))}*/}
-
-                        {/*</Swiper>*/}
-
                         <ul className={cl.bin__list}>
                             {binData.map((item, index) => (
                                 <div className={cl.wrappTest}>
@@ -90,43 +65,7 @@ export const Bin = () => {
                                         price={item.price}
                                         size={item.size}
                                     />
-                                    <BottomButton text={'Тестовая кнопка'}/>
                                 </div>
-
-
-                                // <Swiper
-                                //     modules={[Navigation]}
-                                //     slidesPerView={1}
-                                //     pagination={false}
-                                //     loop={false}
-                                //     spaceBetween={0}
-                                //     className={cl.swiper}
-                                // >
-                                //     <SwiperSlide>
-                                //         <CardProduct
-                                //             index={index}
-                                //             item={item}
-                                //             deleteItem={deleteItem}
-                                //             img={item.img}
-                                //             name={item.name}
-                                //             price={item.price}
-                                //             size={item.size}
-                                //         />
-                                //     </SwiperSlide>
-                                //     <SwiperSlide>
-                                //         <CardProduct
-                                //             index={index}
-                                //             item={item}
-                                //             deleteItem={deleteItem}
-                                //             img={item.img}
-                                //             name={item.name}
-                                //             price={item.price}
-                                //             size={item.size}
-                                //         />
-                                //     </SwiperSlide>
-                                // </Swiper>
-
-
                             ))}
                         </ul>
 

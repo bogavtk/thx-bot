@@ -1,27 +1,27 @@
 import React from 'react';
 import cl from "./CardProduct.module.css";
+import {BottomButton} from "../../../components/BottomButton/BottomButton";
 
 export const CardProduct = ({deleteItem, index, img, name, size, price, item}) => {
 
     return (
         <li key={index} className={cl.bin_item}>
-            <div className={cl.bin_item__left}>
-                <img src={img} />
-                <div className={cl.bin__text}>
-                    <p>{name}</p>
-                    <p>Размер: {size}</p>
+            <div className={cl.mainInfo}>
+                <div className={cl.bin_item__left}>
+                    <img src={img} />
+                    <div className={cl.bin__text}>
+                        <p>{name}</p>
+                        <p>Размер: {size}</p>
+                    </div>
                 </div>
+                <h4>{price} ₽</h4>
             </div>
-            <h4>{price} ₽</h4>
-            <button className={cl.deleteButton}
-                    onClick={() => {deleteItem(item)}}
-            >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                    <path fill-rule="evenodd"
-                          d="M24.707 8.707a1 1 0 0 0-1.414-1.414L16 14.586 8.707 7.293a1 1 0 0 0-1.414 1.414L14.586 16l-7.293 7.293a1 1 0 1 0 1.414 1.414L16 17.414l7.293 7.293a1 1 0 0 0 1.414-1.414L17.414 16l7.293-7.293Z"
-                          clip-rule="evenodd"/>
+            <div className={cl.deleteButton} onClick={() => {deleteItem(item)}}>
+                <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.3335 28.5C8.60016 28.5 7.97216 28.2387 7.4495 27.716C6.92683 27.1933 6.66594 26.5658 6.66683 25.8333V8.5H5.3335V5.83333H12.0002V4.5H20.0002V5.83333H26.6668V8.5H25.3335V25.8333C25.3335 26.5667 25.0722 27.1947 24.5495 27.7173C24.0268 28.24 23.3993 28.5009 22.6668 28.5H9.3335ZM22.6668 8.5H9.3335V25.8333H22.6668V8.5ZM12.0002 23.1667H14.6668V11.1667H12.0002V23.1667ZM17.3335 23.1667H20.0002V11.1667H17.3335V23.1667Z" fill="white"/>
                 </svg>
-            </button>
+                <span>Удалить</span>
+            </div>
         </li>
     );
 };
