@@ -3,6 +3,10 @@ import {useNavigate} from "react-router-dom";
 import {BottomButton} from "../../components/BottomButton/BottomButton";
 import {useEffect, useState} from "react";
 import noorders from '../../assets/basket.png'
+import {CardProduct} from "./CardProduct/CardProduct";
+
+
+import img from "../../assets/item/item_img_1.jpg";
 
 export const Bin = () => {
     const navigate = useNavigate();
@@ -22,7 +26,7 @@ export const Bin = () => {
         const newList = binData.filter(i => i.id !== item.id)
         localStorage.setItem('items', JSON.stringify(newList))
         if (newList.length === 0) {
-            localStorage.clear()
+            localStorage.removeItem('items')
         }
     }
 
@@ -30,7 +34,7 @@ export const Bin = () => {
         <main className={cl.bin}>
             {
                 localStorage.getItem('items')
-                ?
+                    ?
                     <>
                         <section className={cl.bin__header}>
                             <div className={cl.bin_back} onClick={() => navigate('/')}>
@@ -44,35 +48,25 @@ export const Bin = () => {
                             </div>
 
                             <button onClick={() => {
-                                localStorage.clear();
+                                localStorage.removeItem('items');
                                 setIsEmpty(false)
-                            }}>Очистить</button>
+                            }}>Очистить
+                            </button>
                         </section>
-
                         <ul className={cl.bin__list}>
-                            {binData.map((item, index) => {
-                                return (
-                                    <li key={index} className={cl.bin_item}>
-                                        <div className={cl.bin_item__left}>
-                                            <img src={item.img} />
-                                            <div className={cl.bin__text}>
-                                                <p>{item.text}</p>
-                                                <p>Размер: {item.size}</p>
-                                            </div>
-                                        </div>
-                                        <h4>{item.price} ₽</h4>
-                                        <button className={cl.deleteButton}
-                                                onClick={() => {deleteItem(item)}}
-                                        >
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                                <path fill-rule="evenodd"
-                                                      d="M24.707 8.707a1 1 0 0 0-1.414-1.414L16 14.586 8.707 7.293a1 1 0 0 0-1.414 1.414L14.586 16l-7.293 7.293a1 1 0 1 0 1.414 1.414L16 17.414l7.293 7.293a1 1 0 0 0 1.414-1.414L17.414 16l7.293-7.293Z"
-                                                      clip-rule="evenodd"/>
-                                            </svg>
-                                        </button>
-                                    </li>
-                                )
-                            })}
+                            {binData.map((item, index) => (
+                                <div className={cl.wrappTest}>
+                                    <CardProduct
+                                        index={index}
+                                        item={item}
+                                        deleteItem={deleteItem}
+                                        img={item.img}
+                                        name={item.name}
+                                        price={item.price}
+                                        size={item.size}
+                                    />
+                                </div>
+                            ))}
                         </ul>
 
                         <div className={cl.sumPrice}>
@@ -93,5 +87,6 @@ export const Bin = () => {
 
 
         </main>
-    );
+    )
+        ;
 };

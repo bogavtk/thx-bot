@@ -21,6 +21,7 @@ import 'swiper/css/pagination';
 export const Item = () => {
     const { id } = useParams();
     const navigate = useNavigate();
+    const [count, setCount] = useState(0)
 
     const itemID = parseInt(id, 10);
 
@@ -63,6 +64,7 @@ export const Item = () => {
     }, []);
 
     const handleButtonClick = () => {
+        setCount(count => count + 1)
         const localStorageData = localStorage.getItem('items');
         let dataArray = [];
         if (localStorageData) {
@@ -98,7 +100,7 @@ export const Item = () => {
                     slidesPerView={1}
                     pagination={true}
                     loop={true}
-                    spaceBetween={50}
+                    spaceBetween={0}
                     className={cl.swiper}
                 >
                     {itemData.imgs.map((image, index) => (
@@ -106,6 +108,7 @@ export const Item = () => {
                             <img src={image} alt={`Image ${index}`} className={cl.item__img}/>
                         </SwiperSlide>
                     ))}
+
                 </Swiper>
 
             <section className={cl.item__info}>
@@ -139,9 +142,17 @@ export const Item = () => {
 
             <div className={cl.twoButton}>
                 <section className={cl.item__button_wrap}>
-                    <button className={cl.item__button} onClick={handleButtonClick}>
-                        <span>+ Добавить</span>
-                    </button>
+                    {
+                        count > 0
+                            ?
+                            <button className={cl.item__button} onClick={handleButtonClick}>
+                                + <span>{count}</span>
+                            </button>
+                            :
+                            <button className={cl.item__button} onClick={handleButtonClick}>
+                                + <span>Добавить</span>
+                            </button>
+                    }
                 </section>
                 <BottomButton link={'/bin'} text="Корзина"/>
             </div>

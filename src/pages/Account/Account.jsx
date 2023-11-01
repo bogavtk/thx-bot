@@ -27,7 +27,7 @@ export const Account = () => {
                     </svg>
                     <div className={cl.infoRow}>
                         <span className={cl.nameInfoRow}>Номер телефона</span>
-                        <span className={cl.detailInfoRow}>+7 (987) 345 65 63</span>
+                        <span className={cl.detailInfoRow_numberPhone}>+7 (987) 345 65 63</span>
                     </div>
                 </div>
 

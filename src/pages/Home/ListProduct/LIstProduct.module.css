@@ -1,0 +1,6 @@
+.home__cards{
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 47%); /* Определяем длину ячейки */
+    gap: 15px;
+}
