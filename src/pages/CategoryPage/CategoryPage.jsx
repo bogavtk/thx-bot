@@ -7,6 +7,7 @@ const listFilters = [
     {nameFilter: 'Мужские'},
 ]
 
+
 export const CategoryPage = () => {
     return (
         <Filter namePage={'Категории'} listFilters={listFilters}/>

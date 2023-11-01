@@ -26,7 +26,7 @@ export const Bin = () => {
         const newList = binData.filter(i => i.id !== item.id)
         localStorage.setItem('items', JSON.stringify(newList))
         if (newList.length === 0) {
-            localStorage.clear()
+            localStorage.removeItem('items')
         }
     }
 
@@ -48,7 +48,7 @@ export const Bin = () => {
                             </div>
 
                             <button onClick={() => {
-                                localStorage.clear();
+                                localStorage.removeItem('items');
                                 setIsEmpty(false)
                             }}>Очистить
                             </button>

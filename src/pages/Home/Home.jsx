@@ -1,84 +1,58 @@
 import cl from './Home.module.css';
 import {SearchBar} from "./SearchBar/SearchBar";
 import {HomeItem} from "./HomeItem/HomeItem";
-import NikeAirForce107 from '../../assets/item/Nike Air Force 107.jpg';
-import NikeAirForce1HighBootSummitWhite from '../../assets/item/Nike Air Force 1 High Boot Summit White.png'
-import NikeAirJordan1LowDesertBerryGS from '../../assets/item/Nike Air Jordan 1 Low Desert Berry (GS).png'
-import NikeAirJordan1LowInsideOutCreamWhiteLightGreyGS from '../../assets/item/Nike Air Jordan 1 Low Inside Out Cream White Light Grey (GS).jpg'
-import NikeAirJordan1LowPanda2023W from '../../assets/item/Nike Air Jordan 1 Low Panda (2023) (W).png'
-import NikeAirJordan1LowSECraftTaupeHaze from '../../assets/item/Nike Air Jordan 1 Low SE Craft Taupe Haze.png'
-import NikeAirJordan1LowSmokeGrey from '../../assets/item/Nike Air Jordan 1 Low Smoke Grey.jpg'
-import img from '../../assets/item/item_img_1.jpg'
 import {BottomButton} from "../../components/BottomButton/BottomButton";
 import {useState, useEffect} from "react";
 import {NavLink} from "react-router-dom";
+import {dataCards} from "./data";
+
 
 export const Home = () => {
     const [isStorageEmpty, setIsStorageEmpty] = useState(true);
+    const [dataProduct, setDataProduct] = useState([])
 
     useEffect(() => {
         const localStorageData = localStorage.getItem('items');
         if (localStorageData) {
             const dataArray = JSON.parse(localStorageData);
-
             if (dataArray.length > 0) {
                 setIsStorageEmpty(false);
             }
         }
+        const localStorageFilter = localStorage.getItem('filter')
+        if ((localStorageFilter === 'Все товары') || (localStorageFilter === 'По умолчанию') || !localStorageFilter) {
+            setDataProduct(dataCards)
+        } else if ((localStorageFilter === 'Мужские') || (localStorageFilter === 'Женские')) {
+            const filterDataCards = dataCards.filter(function (card) {
+                return card.gender === localStorageFilter
+            })
+            setDataProduct(filterDataCards)
+        } else if (localStorageFilter === 'По возрастанию') {
+            const filterDataCards = []
+            Object.assign(filterDataCards, dataCards)
+            filterDataCards.sort(function (a,b) {
+                const priceA = +a.price.replaceAll(' ', '')
+                const priceB = +b.price.replaceAll(' ', '')
+                return  priceA - priceB
+
+            })
+            setDataProduct(filterDataCards)
+        } else if (localStorageFilter === 'По убыванию') {
+            const filterDataCards = []
+            Object.assign(filterDataCards, dataCards)
+            filterDataCards.sort(function (a, b) {
+                const priceA = +a.price.replaceAll(' ', '')
+                const priceB = +b.price.replaceAll(' ', '')
+                return priceB - priceA
+            })
+            setDataProduct(filterDataCards)
+        } else if (localStorageFilter === 'new') {
+            const filterDataCards = dataCards.filter(function (card) {
+                return card.new === localStorageFilter
+            })
+            setDataProduct(filterDataCards)
+        }
     }, []);
-
-
-    const dataCards = [
-        {
-            id: 1,
-            name: "Nike Air Force 1 '07",
-            desc: "Легендарные. Классические. Белые Air Force",
-            price: "19 900",
-            img: NikeAirForce107,
-            size: 37
-        },
-        {
-            id: 2,
-            name: "Nike Air Force 1 High Boot Summit White",
-            desc: "Высокие белые ботинки на шнуровке. Идеальное сочетание стиля и функциональности.",
-            price: "27 900",
-            img: NikeAirForce1HighBootSummitWhite,
-            size: 37
-        },
-        {
-            id: 3,
-            name: "Nike Air Jordan 1 Low Desert Berry (GS)",
-            desc: "Детские Nike Air Jordan 1 Low Desert Berry",
-            price: "24 900",
-            img: NikeAirJordan1LowDesertBerryGS,
-            size: 37
-        },
-        {
-            id: 4,
-            name: "Nike Air Jordan 1 Low Panda (2023) (W)",
-            desc: "Женские Nike Air Jordan 1 Low Panda",
-            price: "24 900",
-            img: NikeAirJordan1LowPanda2023W,
-            size: 37
-        },
-        {
-            id: 5,
-            name: "Nike Air Jordan 1 Low SE Craft Taupe Haze",
-            price: "29 900",
-            desc: "Женские Nike Air Jordan 1 Low Panda",
-            img: NikeAirJordan1LowSECraftTaupeHaze,
-            size: 37
-        },
-        {
-            id: 6,
-            name: "Nike Air Jordan 1 Low Smoke Grey",
-            desc: "Классические кеды Nike Air Jordan 1 Low Smoke Grey с серым верхом и белой подошвой.",
-            price: "29 900",
-            img: NikeAirJordan1LowSmokeGrey,
-            size: 37
-        },
-    ]
-
 
     return (
         <>
@@ -118,12 +92,9 @@ export const Home = () => {
                 </section>
 
                 <section className={cl.home__cards}>
-                    {dataCards.map((card) => {
-                        return (
-                            <HomeItem key={card.id} card={card}/>
-                        )
-                    })}
-
+                    {dataProduct.map((card) => (
+                        <HomeItem key={card.id} card={card}/>
+                    ))}
                 </section>
 
                 <div className={cl.wrapperFixedButton}>
