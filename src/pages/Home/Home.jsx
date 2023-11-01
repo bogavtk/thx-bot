@@ -5,11 +5,18 @@ import {BottomButton} from "../../components/BottomButton/BottomButton";
 import {useState, useEffect} from "react";
 import {NavLink} from "react-router-dom";
 import {dataCards} from "./data";
+import {ListProduct} from "./ListProduct/ListProduct";
 
 
 export const Home = () => {
     const [isStorageEmpty, setIsStorageEmpty] = useState(true);
     const [dataProduct, setDataProduct] = useState([])
+
+    const [inputText, setInputText] = useState("");
+    const inputHandler = (e) => {
+        let lowerCase = e.target.value.toLowerCase();
+        setInputText(lowerCase);
+    };
 
     useEffect(() => {
         const localStorageData = localStorage.getItem('items');
@@ -58,7 +65,7 @@ export const Home = () => {
         <>
             <main className={cl.home}>
                 <section className={cl.home__header}>
-                    <SearchBar/>
+                    <SearchBar inputHandler={inputHandler}/>
                     <button className={cl.home__filter}>
                         <NavLink to="/filter">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -91,16 +98,11 @@ export const Home = () => {
                     </NavLink>
                 </section>
 
-                <section className={cl.home__cards}>
-                    {dataProduct.map((card) => (
-                        <HomeItem key={card.id} card={card}/>
-                    ))}
-                </section>
+                <ListProduct dataProduct={dataProduct} input={inputText}/>
 
                 <div className={cl.wrapperFixedButton}>
                     <BottomButton link={'/bin'} text="Корзина"/>
                 </div>
-
             </main>
         </>
     );
