@@ -8,6 +8,7 @@
 
 .item{
     padding: 40px 24px;
+    height: 100vh;
 }
 
 .item__img{
@@ -29,6 +30,12 @@
     align-items: center;
 }
 
+.item__name {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
 .item__name > h4{
     font-size: 16px;
     font-weight: 600;
@@ -36,7 +43,6 @@
 }
 
 .item__name > p{
-    padding-top: 8px;
     font-size: 12px;
     font-weight: 400;
     line-height: 16px;

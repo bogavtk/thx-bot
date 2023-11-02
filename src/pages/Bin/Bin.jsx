@@ -60,7 +60,7 @@ export const Bin = () => {
                                         index={index}
                                         item={item}
                                         deleteItem={deleteItem}
-                                        img={item.img}
+                                        img={item.photoBin}
                                         name={item.name}
                                         price={item.price}
                                         size={item.size}

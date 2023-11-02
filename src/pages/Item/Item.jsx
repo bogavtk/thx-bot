@@ -5,6 +5,7 @@ import {useEffect, useState} from "react";
 import img from "../../assets/item/item_img_1.jpg";
 import img2 from "../../assets/item/item_img_2.jpg";
 import classNames from "classnames";
+import dataCard, {dataCards} from '../Home/data'
 
 // Swiper
 
@@ -25,11 +26,12 @@ export const Item = () => {
 
     const itemID = parseInt(id, 10);
 
+    const card = dataCards.find(function (item) {
+        return item.id === itemID
+    })
+
     const itemData = {
         id: itemID,
-        text: "STREETBEAT Shady",
-        undertext: "Женские кроссовки",
-        price: "9 499",
         imgs: [img, img2],
         sizes: [
             {
@@ -72,15 +74,15 @@ export const Item = () => {
         }
 
         // Шаг 2: Проверяем, существует ли объект с таким же id
-        const itemId = itemData.id; // Используйте itemData.id, а не id, так как id - это параметр из useParams()
+        const itemId = card.id; // Используйте card.id, а не id, так как id - это параметр из useParams()
         const isItemExist = dataArray?.some(item => item.id === itemId);
 
         // Шаг 3: Если объект с таким id не существует, добавляем его в массив
-        if (!isItemExist) {
-            dataArray.push(itemData);
+        // if (!isItemExist) {
+            dataArray.push(card);
             // Шаг 4: Обновляем localStorage с обновленным массивом
             localStorage.setItem('items', JSON.stringify(dataArray));
-        }
+        // }
     };
 
 
@@ -103,25 +105,25 @@ export const Item = () => {
                     spaceBetween={0}
                     className={cl.swiper}
                 >
-                    {itemData.imgs.map((image, index) => (
-                        <SwiperSlide key={index} className={cl.swiper_slide}>
-                            <img src={image} alt={`Image ${index}`} className={cl.item__img}/>
-                        </SwiperSlide>
-                    ))}
+                    <SwiperSlide className={cl.swiper_slide}>
+                        <img src={card.img.profile} alt={'Profile'} className={cl.item__img}/>
+                    </SwiperSlide>
+                    <SwiperSlide className={cl.swiper_slide}>
+                        <img src={card.img.photo} alt={'Profile'} className={cl.item__img}/>
+                    </SwiperSlide>
 
                 </Swiper>
 
             <section className={cl.item__info}>
                 <div className={cl.item__name}>
-                    <h4>{itemData.text}</h4>
-                    <p>{itemData.undertext}</p>
+                    <h4>{card.name}</h4>
+                    <span className={cl.item__price}>Цена: {card.price}</span>
+                    <p>{card.gender} кроссовки</p>
                 </div>
-                <p className={cl.item__price}>{itemData.price}</p>
             </section>
 
             <section className={cl.item__block_sizes}>
                 <p>Размеры</p>
-
                 <ul className={cl.item__sizes}>
                     {itemData.sizes.map((size, i) => {
                         return (
@@ -136,8 +138,7 @@ export const Item = () => {
 
             <section className={cl.item__description}>
                 <h4>Описание</h4>
-                <p>{itemData.descriptionTitle}</p>
-                <p>{itemData.descriptionText}</p>
+                <p>{card.desc}</p>
             </section>
 
             <div className={cl.twoButton}>
