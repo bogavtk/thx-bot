@@ -1,9 +1,9 @@
 .wrapperAboutInfo {
     display: flex;
     gap: 20px;
-    align-items: center;
     justify-content: center;
     height: 100vh;
+    margin-top: 40px;
 }
 
 .wrapperAboutInfo img {
@@ -23,6 +23,8 @@
     background-color: white;
     padding: 16px;
     border-radius: 20px;
+    height: max-content;
+    width: 99%;
 }
 
 .wrappIcon {

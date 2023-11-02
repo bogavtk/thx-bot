@@ -1,10 +1,9 @@
 import React from 'react';
 import cl from "./CardProduct.module.css";
-import {BottomButton} from "../../../components/BottomButton/BottomButton";
 import {ButtonDeleteProduct} from "./ButtonDeleteProduct/ButtonDeleteProduct";
 
 export const CardProduct = ({deleteItem, index, img, name, size, price, item}) => {
-
+    console.log(img)
     return (
         <li key={index} className={cl.bin_item}>
             <div className={cl.mainInfo}>

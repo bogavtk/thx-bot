@@ -33,7 +33,7 @@ export const HomeItem = ({ card }) => {
 
     return (
         <section className={cl.card} onClick={handleCardClick}>
-            <img src={card.img} alt="Картинка"/>
+            <img src={card.img.profile} alt="Картинка"/>
             <div className={cl.blockMainText}>
                 <span className={cl.name}>{card.name}</span>
                 <span className={cl.desc}>{card.desc}</span>
