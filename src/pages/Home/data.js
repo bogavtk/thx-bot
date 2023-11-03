@@ -11,13 +11,28 @@ import profileNikeAirJordan1LowPanda2023W from '../../assets/item/profileNikeAir
 import profileNikeAirJordan1LowSECraftTaupeHaze from '../../assets/item/profileNikeAirJordan1LowSECraftTaupeHaze.png'
 import profileNikeAirJordan1LowSmokeGrey from '../../assets/item/profileNikeAirJordan1LowSmokeGrey.jpg'
 
+import newProfileCardNikeAirForce107 from '../../assets/item/photo_2023-11-03_11-56-13.jpg'
+import newProfileNikeAirForce1HighBootSummitWhite from '../../assets/item/profileNike Air Force 1 High Boot Summit White.jpg'
+import newProfileNikeAirJordan1LowDesertBerryGS from '../../assets/item/profile Nike Air Jordan 1 Low Desert Berry (GS).jpg'
+import newProfileNikeAirJordan1LowPanda2023W from '../../assets/item/newProfilNike Air Jordan 1 Low Panda (2023) (W).jpg'
+import newProfileNikeAirJordan1LowSECraftTaupeHaze from '../../assets/item/newProfile Nike Air Jordan 1 Low SE Craft Taupe Haze.jpg'
+import newProfileNikeAirJordan1LowSmokeGrey from '../../assets/item/newProfile Nike Air Jordan 1 Low Smoke Grey.jpg'
+
+
+
+
+
+
+
 export const dataCards= [
     {
         id: 1,
         name: "Nike Air Force 1 '07",
         desc: "Легендарные. Классические. Белые Air Force",
         price: "19 900",
-        img: { profile: profileNikeAirForce107, photo: NikeAirForce107},
+        img: {profile: newProfileCardNikeAirForce107,
+            photo: NikeAirForce107,
+            profileCard: profileNikeAirForce107},
         size: 37,
         gender: "Мужские",
         new: false,
@@ -28,7 +43,10 @@ export const dataCards= [
         name: "Nike Air Force 1 High Boot Summit White",
         desc: "Высокие белые ботинки на шнуровке. Идеальное сочетание стиля и функциональности.",
         price: "27 900",
-        img: {profile: profileNikeAirForce1HighBootSummitWhite, photo: NikeAirForce1HighBootSummitWhite},
+        img: {
+            profile: newProfileNikeAirForce1HighBootSummitWhite,
+            photo: NikeAirForce1HighBootSummitWhite,
+            profileCard: profileNikeAirForce1HighBootSummitWhite},
         size: 37,
         gender: "Мужские",
         new: false,
@@ -39,7 +57,12 @@ export const dataCards= [
         name: "Nike Air Jordan 1 Low Desert Berry (GS)",
         desc: "Детские Nike Air Jordan 1 Low Desert Berry",
         price: "24 900",
-        img: {profile: profileNikeAirJordan1LowDesertBerryGS,photo: NikeAirJordan1LowDesertBerryGS},
+        img: {
+            profile: newProfileNikeAirJordan1LowDesertBerryGS,
+            photo: NikeAirJordan1LowDesertBerryGS,
+            profileCard: profileNikeAirJordan1LowDesertBerryGS,
+
+        },
         size: 37,
         gender: "Мужские",
         new: false,
@@ -50,7 +73,11 @@ export const dataCards= [
         name: "Nike Air Jordan 1 Low Panda (2023) (W)",
         desc: "Женские Nike Air Jordan 1 Low Panda",
         price: "24 900",
-        img: {profile: profileNikeAirJordan1LowPanda2023W, photo: NikeAirJordan1LowPanda2023W},
+        img: {
+            profile: newProfileNikeAirJordan1LowPanda2023W,
+            photo: NikeAirJordan1LowPanda2023W,
+            profileCard: profileNikeAirJordan1LowPanda2023W,
+        },
         size: 37,
         gender: "Женские",
         new: false,
@@ -61,7 +88,12 @@ export const dataCards= [
         name: "Nike Air Jordan 1 Low SE Craft Taupe Haze",
         price: "29 900",
         desc: "Женские Nike Air Jordan 1 Low Panda",
-        img: {profile: profileNikeAirJordan1LowSECraftTaupeHaze, photo: NikeAirJordan1LowSECraftTaupeHaze},
+        img: {
+            profile: newProfileNikeAirJordan1LowSECraftTaupeHaze,
+            photo: NikeAirJordan1LowSECraftTaupeHaze,
+            profileCard: profileNikeAirJordan1LowSECraftTaupeHaze,
+
+        },
         size: 37,
         gender: "Женские",
         new: 'new',
@@ -72,7 +104,11 @@ export const dataCards= [
         name: "Nike Air Jordan 1 Low Smoke Grey",
         desc: "Классические кеды Nike Air Jordan 1 Low Smoke Grey с серым верхом и белой подошвой.",
         price: "29 900",
-        img: {profile: profileNikeAirJordan1LowSmokeGrey, photo: NikeAirJordan1LowSmokeGrey},
+        img: {
+            profile: newProfileNikeAirJordan1LowSmokeGrey,
+            photo: NikeAirJordan1LowSmokeGrey,
+            profileCard: profileNikeAirJordan1LowSmokeGrey,
+        },
         size: 37,
         gender: "Мужские",
         new: 'new',

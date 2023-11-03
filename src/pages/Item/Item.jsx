@@ -106,7 +106,7 @@ export const Item = () => {
                     className={cl.swiper}
                 >
                     <SwiperSlide className={cl.swiper_slide}>
-                        <img src={card.img.profile} alt={'Profile'} className={cl.item__img}/>
+                        <img src={card.img.profileCard} alt={'Profile'} className={cl.item__img}/>
                     </SwiperSlide>
                     <SwiperSlide className={cl.swiper_slide}>
                         <img src={card.img.photo} alt={'Profile'} className={cl.item__img}/>
