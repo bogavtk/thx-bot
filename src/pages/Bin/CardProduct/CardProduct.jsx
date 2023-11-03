@@ -2,7 +2,7 @@ import React from 'react';
 import cl from "./CardProduct.module.css";
 import {ButtonDeleteProduct} from "./ButtonDeleteProduct/ButtonDeleteProduct";
 
-export const CardProduct = ({deleteItem, index, img, name, size, price, item}) => {
+export const CardProduct = ({deleteItem, index, img, name, size, price, item, count}) => {
     console.log(img)
     return (
         <li key={index} className={cl.bin_item}>
@@ -12,6 +12,7 @@ export const CardProduct = ({deleteItem, index, img, name, size, price, item}) =
                     <div className={cl.bin__text}>
                         <p>{name}</p>
                         <p>Размер: {size}</p>
+                        <p>Количество: {count}</p>
                     </div>
                 </div>
                 <h4>{price} ₽</h4>

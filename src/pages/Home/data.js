@@ -37,6 +37,7 @@ export const dataCards= [
         gender: "Мужские",
         new: false,
         photoBin: profileNikeAirForce107,
+        countProduct: 0
     },
     {
         id: 2,
@@ -51,6 +52,7 @@ export const dataCards= [
         gender: "Мужские",
         new: false,
         photoBin: profileNikeAirForce1HighBootSummitWhite,
+        countProduct: 0
     },
     {
         id: 3,
@@ -67,6 +69,7 @@ export const dataCards= [
         gender: "Мужские",
         new: false,
         photoBin: profileNikeAirJordan1LowDesertBerryGS,
+        countProduct: 0
     },
     {
         id: 4,
@@ -82,6 +85,7 @@ export const dataCards= [
         gender: "Женские",
         new: false,
         photoBin: profileNikeAirJordan1LowPanda2023W,
+        countProduct: 0
     },
     {
         id: 5,
@@ -98,6 +102,7 @@ export const dataCards= [
         gender: "Женские",
         new: 'new',
         photoBin: profileNikeAirJordan1LowSECraftTaupeHaze,
+        countProduct: 0
     },
     {
         id: 6,
@@ -113,5 +118,6 @@ export const dataCards= [
         gender: "Мужские",
         new: 'new',
         photoBin: profileNikeAirJordan1LowSmokeGrey,
+        countProduct: 0
     },
 ]

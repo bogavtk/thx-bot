@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import {useState} from "react";
 export const HomeItem = ({ card }) => {
 
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(card.countProduct)
     const navigate = useNavigate();
 
     const handleCardClick = () => {
@@ -12,6 +12,8 @@ export const HomeItem = ({ card }) => {
 
     const handleButtonClick = (event) => {
         setCount(count => count + 1)
+        card.countProduct = count + 1
+        console.log(card)
 
         event.stopPropagation();
         let dataArray = [];
@@ -24,11 +26,15 @@ export const HomeItem = ({ card }) => {
         const isItemExist = dataArray.some(item => item.id === itemId);
 
         // Шаг 3: Если объект с таким id не существует, добавляем его в массив
-        // if (!isItemExist) {
-            dataArray.push(card);
+        if (isItemExist) {
+            const newDataArray = dataArray.filter( (item) => item.id !== itemId)
+            newDataArray.push(card);
             // Шаг 4: Обновляем localStorage с обновленным массивом
+            localStorage.setItem('items', JSON.stringify(newDataArray));
+        } else {
+            dataArray.push(card);
             localStorage.setItem('items', JSON.stringify(dataArray));
-        // }
+        }
     };
 
     return (

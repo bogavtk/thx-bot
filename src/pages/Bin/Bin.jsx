@@ -64,6 +64,7 @@ export const Bin = () => {
                                         name={item.name}
                                         price={item.price}
                                         size={item.size}
+                                        count={item.countProduct}
                                     />
                                 </div>
                             ))}
