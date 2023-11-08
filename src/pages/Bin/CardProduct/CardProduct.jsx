@@ -22,6 +22,7 @@ export const CardProduct = ({index, img, name, size, price, item, count, setBinD
                                         :
                                         <span>{elem},</span>
 
+
                                 ))}
                             </div>
                         </p>
