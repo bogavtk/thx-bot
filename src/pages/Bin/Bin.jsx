@@ -21,6 +21,9 @@ export const Bin = () => {
         }
     }, []);
 
+
+
+
     return (
         <main className={cl.bin}>
             {
@@ -40,11 +43,11 @@ export const Bin = () => {
 
                             <button onClick={() => {
                                 localStorage.removeItem('items');
-                                setIsEmpty(false)
-                            }}>Очистить
+                                setIsEmpty(false)}}>
+                                Очистить
                             </button>
                         </section>
-                        <ul className={cl.bin__list}>
+                        <div className={cl.bin__list}>
                             {binData.map((item, index) => (
                                 <div className={cl.wrappTest}>
                                     <CardProduct
@@ -60,7 +63,7 @@ export const Bin = () => {
                                     />
                                 </div>
                             ))}
-                        </ul>
+                        </div>
 
                         <div className={cl.sumPrice}>
                             <span className={cl.title}>Итого:</span>
@@ -75,11 +78,7 @@ export const Bin = () => {
                         <span>У вас пока нет заказов</span>
                         <BottomButton link={'/'} text={'Назад'}/>
                     </div>
-
             }
-
-
         </main>
-    )
-        ;
+    );
 };

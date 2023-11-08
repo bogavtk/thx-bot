@@ -1,21 +1,20 @@
 import React from 'react';
 import cl from "./ButtonDeleteProduct.module.css";
 
-export const ButtonDeleteProduct = ({item, setBinData, binData, setCountProduct}) => {
+export const ButtonDeleteProduct = ({item, setBinData, binData, setCountProduct, countProduct}) => {
 
     function deleteItem(item) {
-
-        if (item.countProduct === 1) {
-            setBinData(binData.filter(i => i.id !== item.id))
+        item.countProduct = item.countProduct - 1
+        if (item.countProduct === 0) {
+            window.location.reload()
             const newList = binData.filter(i => i.id !== item.id)
+            setBinData(newList)
             localStorage.setItem('items', JSON.stringify(newList))
             if (newList.length === 0) {
                 localStorage.removeItem('items')
             }
-            window.location.reload()
         } else {
-            item.countProduct = item.countProduct - 1
-            setCountProduct(item.countProduct)
+            setCountProduct(countProduct => countProduct - 1)
             const newList = binData.map( i => {
                 if (i.id === item.id) {
                     return item
@@ -26,10 +25,6 @@ export const ButtonDeleteProduct = ({item, setBinData, binData, setCountProduct}
         }
 
 
-        // localStorage.setItem('items', JSON.stringify(newList))
-        // if (newList.length === 0) {
-        //     localStorage.removeItem('items')
-        // }
     }
 
     return (
