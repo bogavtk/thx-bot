@@ -7,64 +7,64 @@
     border-bottom: solid 1px #ABABAB;
 }
 
-.nameFilter {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
-}
+/*.nameFilter {*/
+/*    font-weight: 500;*/
+/*    font-size: 14px;*/
+/*    line-height: 16px;*/
+/*}*/
 
-.container {
-    position: relative;
-    cursor: pointer;
-    width: 100%;
-    height: 56px;
-    display: flex;
-    align-items: center;
-}
+/*.container {*/
+/*    position: relative;*/
+/*    cursor: pointer;*/
+/*    width: 100%;*/
+/*    height: 56px;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*}*/
 
-.container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-}
+/*.container input {*/
+/*    position: absolute;*/
+/*    opacity: 0;*/
+/*    cursor: pointer;*/
+/*}*/
 
-.checkmark {
-    position: absolute;
-    right: 5px;
-    height: 25px;
-    width: 25px;
-    background-color: white;
-    border-radius: 50%;
-    border: solid 2px #2196F3;
-}
-.container:hover input ~ .checkmark {
-    background-color: white;
-}
+/*.checkmark {*/
+/*    position: absolute;*/
+/*    right: 5px;*/
+/*    height: 25px;*/
+/*    width: 25px;*/
+/*    background-color: white;*/
+/*    border-radius: 50%;*/
+/*    border: solid 2px #2196F3;*/
+/*}*/
+/*.container:hover input ~ .checkmark {*/
+/*    background-color: white;*/
+/*}*/
 
-.container input:checked ~ .checkmark {
-    border: solid 2px #2196F3;
-}
+/*.container input:checked ~ .checkmark {*/
+/*    border: solid 2px #2196F3;*/
+/*}*/
 
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
+/*.checkmark:after {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    display: none;*/
+/*}*/
 
-/* Show the indicator (dot/circle) when checked */
-.container input:checked ~ .checkmark:after {
-    display: block;
-}
+/*!* Show the indicator (dot/circle) when checked *!*/
+/*.container input:checked ~ .checkmark:after {*/
+/*    display: block;*/
+/*}*/
 
-.blockFilter:active .checkmark:after {
-    display: block;
-}
+/*.blockFilter:active .checkmark:after {*/
+/*    display: block;*/
+/*}*/
 
-.container .checkmark:after {
-    top: 4px;
-    left: 4px;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: #2196F3;
-}
+/*.container .checkmark:after {*/
+/*    top: 4px;*/
+/*    left: 4px;*/
+/*    width: 14px;*/
+/*    height: 14px;*/
+/*    border-radius: 50%;*/
+/*    background: #2196F3;*/
+/*}*/
