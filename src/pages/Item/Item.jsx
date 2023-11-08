@@ -6,6 +6,7 @@ import img from "../../assets/item/item_img_1.jpg";
 import img2 from "../../assets/item/item_img_2.jpg";
 import classNames from "classnames";
 import dataCard, {dataCards} from '../Home/data'
+import {addProduct} from "../../utils/addProduct";
 
 // Swiper
 
@@ -16,6 +17,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import {Size} from "./Size/Size";
 
 // Swiper
 
@@ -23,32 +25,29 @@ export const Item = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [count, setCount] = useState(0)
-
     const itemID = parseInt(id, 10);
 
     const card = dataCards.find(function (item) {
         return item.id === itemID
     })
 
+
     const itemData = {
-        id: itemID,
-        imgs: [img, img2],
         sizes: [
             {
-                size: "36",
+                size: 36,
                 isRetain: true
             },
             {
-                size: "37",
+                size: 37,
                 isRetain: true
             },
             {
-                size: "38",
+                size: 38,
                 isRetain: false
             },
         ],
-        descriptionTitle: "Материал",
-        descriptionText: "Верх: 60% нат. кожа, 40% полиуретан, подкладка: текстиль, низ: резина",
+
     }
 
     const [isStorageEmpty, setIsStorageEmpty] = useState(true);
@@ -65,24 +64,29 @@ export const Item = () => {
         }
     }, []);
 
-    const handleButtonClick = () => {
+    const handleButtonClick = (event) => {
         setCount(count => count + 1)
-        const localStorageData = localStorage.getItem('items');
+        card.countProduct = count + 1
+        event.stopPropagation();
         let dataArray = [];
-        if (localStorageData) {
-            dataArray = JSON.parse(localStorageData);
+        if (localStorage.getItem('items')) {
+            dataArray = JSON.parse(localStorage.getItem('items'));
         }
 
         // Шаг 2: Проверяем, существует ли объект с таким же id
-        const itemId = card.id; // Используйте card.id, а не id, так как id - это параметр из useParams()
-        const isItemExist = dataArray?.some(item => item.id === itemId);
+        const itemId = card.id;
+        const isItemExist = dataArray.some(item => item.id === itemId);
 
         // Шаг 3: Если объект с таким id не существует, добавляем его в массив
-        // if (!isItemExist) {
-            dataArray.push(card);
+        if (isItemExist) {
+            const newDataArray = dataArray.filter( (item) => item.id !== itemId)
+            newDataArray.push(card);
             // Шаг 4: Обновляем localStorage с обновленным массивом
+            localStorage.setItem('items', JSON.stringify(newDataArray));
+        } else {
+            dataArray.push(card);
             localStorage.setItem('items', JSON.stringify(dataArray));
-        // }
+        }
     };
 
 
@@ -127,8 +131,7 @@ export const Item = () => {
                 <ul className={cl.item__sizes}>
                     {itemData.sizes.map((size, i) => {
                         return (
-                            <li className={classNames( {
-                                [cl.blocked]: !size.isRetain,})}>{size.size}</li>
+                            <Size size={size} card={card}/>
                         )
                     })}
                 </ul>

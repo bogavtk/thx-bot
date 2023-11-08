@@ -1,23 +1,42 @@
-import React from 'react';
+import React, {useState} from 'react';
 import cl from "./CardProduct.module.css";
 import {ButtonDeleteProduct} from "./ButtonDeleteProduct/ButtonDeleteProduct";
 
-export const CardProduct = ({deleteItem, index, img, name, size, price, item, count}) => {
-    console.log(img)
+export const CardProduct = ({index, img, name, size, price, item, count, setBinData, binData}) => {
+
+    const [countProduct, setCountProduct] = useState(count)
+
     return (
         <li key={index} className={cl.bin_item}>
             <div className={cl.mainInfo}>
                 <div className={cl.bin_item__left}>
-                    <img src={img} />
+                    <img src={img}/>
                     <div className={cl.bin__text}>
                         <p>{name}</p>
-                        <p>Размер: {size}</p>
-                        <p>Количество: {count}</p>
+                        <p className={cl.blockSizes}>Размеры:
+                            <div className={cl.listSizes}>
+                                {size.map(elem => (
+                                    size.at(-1) === elem
+                                        ?
+                                        <span>{elem}</span>
+                                        :
+                                        <span>{elem},</span>
+
+
+                                ))}
+                            </div>
+                        </p>
+                        <p>Количество: {countProduct}</p>
                     </div>
                 </div>
                 <h4>{price} ₽</h4>
             </div>
-            <ButtonDeleteProduct deleteItem={deleteItem} item={item}/>
+            <ButtonDeleteProduct
+                item={item}
+                setBinData={setBinData}
+                binData={binData}
+                setCountProduct={setCountProduct}
+            />
         </li>
     );
 };

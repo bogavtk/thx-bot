@@ -4,6 +4,7 @@ import cl from './FilterBlock.module.css'
 export const FilterBlock = ({nameFilter}) => {
 
     function click(nameFilter) {
+
         if (nameFilter === 'Новинки') {
             localStorage.setItem("filter", 'new')
         } else {
@@ -16,9 +17,9 @@ export const FilterBlock = ({nameFilter}) => {
 
 
     return (
-        <div className={cl.blockFilter}>
-            <span className={cl.nameFilter}>{nameFilter}</span>
-            <label className={cl.container}>
+        <div className={cl.blockFilter} >
+            <label className={cl.container} onClick={() => {click(nameFilter)}}>
+                <span className={cl.nameFilter}>{nameFilter}</span>
                 {
                     (filter === nameFilter) || filter === 'new'
                     ?
@@ -26,8 +27,7 @@ export const FilterBlock = ({nameFilter}) => {
                         :
                         <input type="radio" name="radio"/>
                 }
-                <span className={cl.checkmark} onClick={() => {click(nameFilter)}}></span>
-
+                <span className={cl.checkmark}></span>
             </label>
         </div>
     );

@@ -49,3 +49,12 @@
     padding: 16px 3px;
     width: 100%;
 }
+
+.blockSizes {
+    display: flex;
+}
+
+.listSizes {
+    display: flex;
+    gap: 2px;
+}

@@ -1,7 +1,37 @@
 import React from 'react';
 import cl from "./ButtonDeleteProduct.module.css";
 
-export const ButtonDeleteProduct = ({deleteItem, item}) => {
+export const ButtonDeleteProduct = ({item, setBinData, binData, setCountProduct}) => {
+
+    function deleteItem(item) {
+
+        if (item.countProduct === 1) {
+            setBinData(binData.filter(i => i.id !== item.id))
+            const newList = binData.filter(i => i.id !== item.id)
+            localStorage.setItem('items', JSON.stringify(newList))
+            if (newList.length === 0) {
+                localStorage.removeItem('items')
+            }
+            window.location.reload()
+        } else {
+            item.countProduct = item.countProduct - 1
+            setCountProduct(item.countProduct)
+            const newList = binData.map( i => {
+                if (i.id === item.id) {
+                    return item
+                }
+                return i
+            })
+            localStorage.setItem('items', JSON.stringify(newList))
+        }
+
+
+        // localStorage.setItem('items', JSON.stringify(newList))
+        // if (newList.length === 0) {
+        //     localStorage.removeItem('items')
+        // }
+    }
+
     return (
         <div className={cl.deleteButton} onClick={() => {deleteItem(item)}}>
             <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
