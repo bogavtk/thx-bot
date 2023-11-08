@@ -1,0 +1,30 @@
+.blockSize {
+    border-radius: 8px;
+    border: 1px solid white;
+    background: #FFF;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/*.blockSize:active {*/
+/*    border-radius: 8px;*/
+/*    border: 1px solid #037EE5;*/
+/*    background: #FFF;*/
+/*    padding: 8px;*/
+/*    font-size: 14px;*/
+/*    font-weight: 500;*/
+/*}*/
+
+.choose {
+    border-radius: 8px;
+    border: 1px solid #037EE5;
+    background: #FFF;
+}
+
+.blocked{
+    pointer-events: none;
+    background: #ABABAB!important;
+    color: #787878;
+    border: none!important;
+}

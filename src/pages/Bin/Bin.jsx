@@ -21,15 +21,6 @@ export const Bin = () => {
         }
     }, []);
 
-    function deleteItem(item) {
-        setBinData(binData.filter(i => i.id !== item.id))
-        const newList = binData.filter(i => i.id !== item.id)
-        localStorage.setItem('items', JSON.stringify(newList))
-        if (newList.length === 0) {
-            localStorage.removeItem('items')
-        }
-    }
-
     return (
         <main className={cl.bin}>
             {
@@ -59,12 +50,13 @@ export const Bin = () => {
                                     <CardProduct
                                         index={index}
                                         item={item}
-                                        deleteItem={deleteItem}
                                         img={item.photoBin}
                                         name={item.name}
                                         price={item.price}
                                         size={item.size}
                                         count={item.countProduct}
+                                        setBinData={setBinData}
+                                        binData={binData}
                                     />
                                 </div>
                             ))}
