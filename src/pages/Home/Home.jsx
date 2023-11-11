@@ -6,6 +6,9 @@ import {useState, useEffect} from "react";
 import {NavLink} from "react-router-dom";
 import {dataCards} from "./data";
 import {ListProduct} from "./ListProduct/ListProduct";
+import axios, * as others from 'axios';
+import {getProduct} from "../../api/api";
+
 
 
 export const Home = () => {
@@ -19,6 +22,11 @@ export const Home = () => {
     };
 
     useEffect(() => {
+        getProduct().then((res) => {
+            console.log(res.data.result)
+            setDataProduct(res.data.result)
+        })
+
         const localStorageData = localStorage.getItem('items');
         if (localStorageData) {
             const dataArray = JSON.parse(localStorageData);
@@ -26,40 +34,52 @@ export const Home = () => {
                 setIsStorageEmpty(false);
             }
         }
-        const localStorageFilter = localStorage.getItem('filter')
-        if ((localStorageFilter === 'Все товары') || (localStorageFilter === 'По умолчанию') || !localStorageFilter) {
-            setDataProduct(dataCards)
-        } else if ((localStorageFilter === 'Мужские') || (localStorageFilter === 'Женские')) {
-            const filterDataCards = dataCards.filter(function (card) {
-                return card.gender === localStorageFilter
-            })
-            setDataProduct(filterDataCards)
-        } else if (localStorageFilter === 'По возрастанию') {
-            const filterDataCards = []
-            Object.assign(filterDataCards, dataCards)
-            filterDataCards.sort(function (a,b) {
-                const priceA = +a.price.replaceAll(' ', '')
-                const priceB = +b.price.replaceAll(' ', '')
-                return  priceA - priceB
 
+    }, []);
+
+
+    const localStorageFilter = localStorage.getItem('filter')
+
+    useEffect(() => {
+        if ((localStorageFilter === 'Все товары') || (localStorageFilter === 'По умолчанию') || !localStorageFilter) {
+            setDataProduct(dataProduct)
+        } else if ((localStorageFilter === 'Мужская обувь') || (localStorageFilter === 'Женская обувь')) {
+            getProduct().then((res) => {
+                const list = res.data.result
+                const filterDataCards = list.filter(function (card) {
+                    return card.category === localStorageFilter
+                })
+                setDataProduct(filterDataCards)
             })
-            setDataProduct(filterDataCards)
+        } else if (localStorageFilter === 'По возрастанию') {
+            getProduct().then((res) => {
+                const list = res.data.result
+                list.sort(function (a,b) {
+                    const priceA = a.price
+                    const priceB = b.price
+                    return  priceA - priceB
+                })
+                setDataProduct(list)
+            })
+
         } else if (localStorageFilter === 'По убыванию') {
-            const filterDataCards = []
-            Object.assign(filterDataCards, dataCards)
-            filterDataCards.sort(function (a, b) {
-                const priceA = +a.price.replaceAll(' ', '')
-                const priceB = +b.price.replaceAll(' ', '')
-                return priceB - priceA
+            getProduct().then((res) => {
+                const list = res.data.result
+                list.sort(function (a,b) {
+                    const priceA = a.price
+                    const priceB = b.price
+                    return  priceB - priceA
+                })
+                setDataProduct(list)
             })
-            setDataProduct(filterDataCards)
         } else if (localStorageFilter === 'new') {
             const filterDataCards = dataCards.filter(function (card) {
                 return card.new === localStorageFilter
             })
             setDataProduct(filterDataCards)
         }
-    }, []);
+
+    }, [])
 
     return (
         <>

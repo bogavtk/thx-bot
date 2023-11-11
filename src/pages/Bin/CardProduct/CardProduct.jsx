@@ -15,7 +15,7 @@ export const CardProduct = ({index, img, name, size, price, item, count, setBinD
                         <p>{name}</p>
                         <p className={cl.blockSizes}>Размеры:
                             <span className={cl.listSizes}>
-                                {size.map(elem => (
+                                {size?.map(elem => (
                                     size.at(-1) === elem
                                         ?
                                         <span>{elem}</span>

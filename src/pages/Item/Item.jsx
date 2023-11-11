@@ -18,6 +18,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import {Size} from "./Size/Size";
+import {getProduct} from "../../api/api";
 
 // Swiper
 
@@ -27,9 +28,7 @@ export const Item = () => {
     const [count, setCount] = useState(0)
     const itemID = parseInt(id, 10);
 
-    const card = dataCards.find(function (item) {
-        return item.id === itemID
-    })
+    const [card, setCard] = useState([])
 
 
     const itemData = {
@@ -62,9 +61,34 @@ export const Item = () => {
                 setIsStorageEmpty(false);
             }
         }
+
+        getProduct().then((res) => {
+            const listData = res.data.result
+            const newCard = listData.find(function (item) {
+                return item.product_id === itemID
+            })
+            setCard(newCard)
+        })
+
     }, []);
 
+
+
     const handleButtonClick = (event) => {
+        //Здесь проверяю, какие размеры выбрал пользователь
+        itemData.sizes.forEach((elem) => {
+            if (localStorage.getItem(elem.size)) {
+                const sizeNumber = JSON.parse(localStorage.getItem(elem.size))
+                if (sizeNumber) {
+                    if (!card.sizes?.includes(elem.size)) {
+                        card.sizes?.push(elem.size)
+                    }
+
+                }
+            }
+        })
+
+
         setCount(count => count + 1)
         card.countProduct = count + 1
         event.stopPropagation();
@@ -74,12 +98,12 @@ export const Item = () => {
         }
 
         // Шаг 2: Проверяем, существует ли объект с таким же id
-        const itemId = card.id;
-        const isItemExist = dataArray.some(item => item.id === itemId);
+        const itemId = card.product_id;
+        const isItemExist = dataArray.some(item => item.product_id === itemId);
 
         // Шаг 3: Если объект с таким id не существует, добавляем его в массив
         if (isItemExist) {
-            const newDataArray = dataArray.filter( (item) => item.id !== itemId)
+            const newDataArray = dataArray.filter( (item) => item.product_id !== itemId)
             newDataArray.push(card);
             // Шаг 4: Обновляем localStorage с обновленным массивом
             localStorage.setItem('items', JSON.stringify(newDataArray));
@@ -101,28 +125,28 @@ export const Item = () => {
                 </svg>
             </div>
 
-                <Swiper
-                    modules={[Navigation, Pagination ]}
-                    slidesPerView={1}
-                    pagination={true}
-                    loop={true}
-                    spaceBetween={0}
-                    className={cl.swiper}
-                >
-                    <SwiperSlide className={cl.swiper_slide}>
-                        <img src={card.img.profileCard} alt={'Profile'} className={cl.item__img}/>
-                    </SwiperSlide>
-                    <SwiperSlide className={cl.swiper_slide}>
-                        <img src={card.img.photo} alt={'Profile'} className={cl.item__img}/>
-                    </SwiperSlide>
+                {/*<Swiper*/}
+                {/*    modules={[Navigation, Pagination ]}*/}
+                {/*    slidesPerView={1}*/}
+                {/*    pagination={true}*/}
+                {/*    loop={true}*/}
+                {/*    spaceBetween={0}*/}
+                {/*    className={cl.swiper}*/}
+                {/*>*/}
+                {/*    <SwiperSlide className={cl.swiper_slide}>*/}
+                {/*        <img src={card.img.profileCard} alt={'Profile'} className={cl.item__img}/>*/}
+                {/*    </SwiperSlide>*/}
+                {/*    <SwiperSlide className={cl.swiper_slide}>*/}
+                {/*        <img src={card.img.photo} alt={'Profile'} className={cl.item__img}/>*/}
+                {/*    </SwiperSlide>*/}
 
-                </Swiper>
+                {/*</Swiper>*/}
 
             <section className={cl.item__info}>
                 <div className={cl.item__name}>
-                    <h4>{card.name}</h4>
+                    <h4>{card.product_name}</h4>
                     <span className={cl.item__price}>Цена: {card.price}</span>
-                    <p>{card.gender} кроссовки</p>
+                    <p>{card.category} кроссовки</p>
                 </div>
             </section>
 
@@ -141,7 +165,7 @@ export const Item = () => {
 
             <section className={cl.item__description}>
                 <h4>Описание</h4>
-                <p>{card.desc}</p>
+                <p>{card.description}</p>
             </section>
 
             <div className={cl.twoButton}>

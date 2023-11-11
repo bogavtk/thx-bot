@@ -4,11 +4,11 @@ import {useState} from "react";
 import {addProduct} from "../../../utils/addProduct";
 export const HomeItem = ({ card }) => {
 
-    const [count, setCount] = useState(card.countProduct)
+    const [count, setCount] = useState(0)
     const navigate = useNavigate();
 
     const handleCardClick = () => {
-        navigate(`/item/${card.id}`);
+        navigate(`/item/${card.product_id}`);
     };
 
     const handleButtonClick = (event) => {
@@ -18,10 +18,10 @@ export const HomeItem = ({ card }) => {
 
     return (
         <section className={cl.card} onClick={handleCardClick}>
-            <img src={card.img.profile} alt="Картинка"/>
+            {/*<img src={card.img.profile} alt="Картинка"/>*/}
             <div className={cl.blockMainText}>
-                <span className={cl.name}>{card.name}</span>
-                <span className={cl.desc}>{card.desc}</span>
+                <span className={cl.name}>{card.product_name}</span>
+                <span className={cl.desc}>{card.description}</span>
             </div>
 
             <div className={cl.bottomCard}>

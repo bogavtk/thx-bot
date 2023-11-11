@@ -7,7 +7,7 @@ export const ButtonDeleteProduct = ({item, setBinData, binData, setCountProduct,
         item.countProduct = item.countProduct - 1
         if (item.countProduct === 0) {
             window.location.reload()
-            const newList = binData.filter(i => i.id !== item.id)
+            const newList = binData.filter(i => i.product_id !== item.product_id)
             setBinData(newList)
             localStorage.setItem('items', JSON.stringify(newList))
             if (newList.length === 0) {
@@ -16,7 +16,7 @@ export const ButtonDeleteProduct = ({item, setBinData, binData, setCountProduct,
         } else {
             setCountProduct(countProduct => countProduct - 1)
             const newList = binData.map( i => {
-                if (i.id === item.id) {
+                if (i.product_id === item.product_id) {
                     return item
                 }
                 return i

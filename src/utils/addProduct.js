@@ -10,12 +10,12 @@ export function addProduct(event, card, count) {
     }
 
     // Шаг 2: Проверяем, существует ли объект с таким же id
-    const itemId = card.id;
-    const isItemExist = dataArray.some(item => item.id === itemId);
+    const itemId = card.product_id;
+    const isItemExist = dataArray.some(item => item.product_id === itemId);
 
     // Шаг 3: Если объект с таким id не существует, добавляем его в массив
     if (isItemExist) {
-        const newDataArray = dataArray.filter( (item) => item.id !== itemId)
+        const newDataArray = dataArray.filter( (item) => item.product_id !== itemId)
         newDataArray.push(card);
         // Шаг 4: Обновляем localStorage с обновленным массивом
         localStorage.setItem('items', JSON.stringify(newDataArray));

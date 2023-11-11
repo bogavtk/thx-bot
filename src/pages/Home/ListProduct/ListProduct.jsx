@@ -9,7 +9,7 @@ export const ListProduct = ({dataProduct, input}) => {
             return el;
         }
         else {
-            return el.name.toLowerCase().includes(input)
+            return el.product_name.toLowerCase().includes(input)
         }
     })
 

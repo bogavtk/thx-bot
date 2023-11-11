@@ -56,7 +56,7 @@ export const Bin = () => {
                                         img={item.photoBin}
                                         name={item.name}
                                         price={item.price}
-                                        size={item.size}
+                                        size={item.sizes}
                                         count={item.countProduct}
                                         setBinData={setBinData}
                                         binData={binData}

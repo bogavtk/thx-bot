@@ -3,8 +3,8 @@ import {Filter} from "../../components/Filter/Filter";
 
 const listFilters = [
     {nameFilter: 'Все товары'},
-    {nameFilter: 'Женские'},
-    {nameFilter: 'Мужские'},
+    {nameFilter: 'Женская обувь'},
+    {nameFilter: 'Мужская обувь'},
 ]
 
 
