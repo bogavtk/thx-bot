@@ -1,11 +1,13 @@
 import cl from './HomeItem.module.css';
 import { useNavigate } from "react-router-dom";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {addProduct} from "../../../utils/addProduct";
+import {getImageProduct, getSrcImageProduct} from "../../../api/api";
 export const HomeItem = ({ card }) => {
 
     const [count, setCount] = useState(0)
     const navigate = useNavigate();
+    const [img, setImg] = useState()
 
     const handleCardClick = () => {
         navigate(`/item/${card.product_id}`);
@@ -16,9 +18,10 @@ export const HomeItem = ({ card }) => {
         addProduct(event, card, count)
     };
 
+
     return (
         <section className={cl.card} onClick={handleCardClick}>
-            {/*<img src={card.img.profile} alt="Картинка"/>*/}
+            <img src={getSrcImageProduct(card.product_id)} alt="Картинка"/>
             <div className={cl.blockMainText}>
                 <span className={cl.name}>{card.product_name}</span>
                 <span className={cl.desc}>{card.description}</span>

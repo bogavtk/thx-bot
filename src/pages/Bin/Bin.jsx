@@ -7,6 +7,7 @@ import {CardProduct} from "./CardProduct/CardProduct";
 
 
 import img from "../../assets/item/item_img_1.jpg";
+import {getSrcImageProduct} from "../../api/api";
 
 export const Bin = () => {
     const navigate = useNavigate();
@@ -53,7 +54,7 @@ export const Bin = () => {
                                     <CardProduct
                                         index={index}
                                         item={item}
-                                        img={item.photoBin}
+                                        img={item.product_id}
                                         name={item.name}
                                         price={item.price}
                                         size={item.sizes}

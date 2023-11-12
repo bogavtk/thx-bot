@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import cl from "./CardProduct.module.css";
 import {ButtonDeleteProduct} from "./ButtonDeleteProduct/ButtonDeleteProduct";
+import {getSrcImageProduct} from "../../../api/api";
 
 export const CardProduct = ({index, img, name, size, price, item, count, setBinData, binData, setRender}) => {
 
@@ -10,7 +11,7 @@ export const CardProduct = ({index, img, name, size, price, item, count, setBinD
         <div key={index} className={cl.bin_item}>
             <div className={cl.mainInfo}>
                 <div className={cl.bin_item__left}>
-                    <img src={img}/>
+                    <img src={getSrcImageProduct(img)}/>
                     <div className={cl.bin__text}>
                         <p>{name}</p>
                         <p className={cl.blockSizes}>Размеры:

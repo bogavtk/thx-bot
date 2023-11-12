@@ -7,7 +7,7 @@ import {NavLink} from "react-router-dom";
 import {dataCards} from "./data";
 import {ListProduct} from "./ListProduct/ListProduct";
 import axios, * as others from 'axios';
-import {getProduct} from "../../api/api";
+import {getImageProduct, getProduct} from "../../api/api";
 
 
 
@@ -26,6 +26,10 @@ export const Home = () => {
             console.log(res.data.result)
             setDataProduct(res.data.result)
         })
+
+        // getImageProduct('1').then((res) => {
+        //     console.log(res)
+        // })
 
         const localStorageData = localStorage.getItem('items');
         if (localStorageData) {

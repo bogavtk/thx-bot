@@ -10,14 +10,7 @@ export const Size = ({size, card}) => {
         setStateSize(!stateSize)
         localStorage.setItem(size.size, !stateSize)
     }
-    // if (stateSize && !card.sizes.includes(size.size)) {
-    //     card.sizes.push(size.size)
-    // } else if (!stateSize) {
-    //     const newList = card.sizes?.filter(function (s) {
-    //         return s !== size.size
-    //     })
-    //
-    // }
+
 
 
 
