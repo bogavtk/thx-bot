@@ -7,8 +7,7 @@ export const ListProduct = ({dataProduct, input}) => {
     const filteredData = dataProduct.filter((el) => {
         if (input === '') {
             return el;
-        }
-        else {
+        } else {
             return el.product_name.toLowerCase().includes(input)
         }
     })
@@ -16,8 +15,8 @@ export const ListProduct = ({dataProduct, input}) => {
 
     return (
         <section className={cl.home__cards}>
-            {filteredData.map((card) => (
-                <HomeItem key={card.id} card={card}/>
+            {filteredData.map((card, index) => (
+                <HomeItem key={index} card={card}/>
             ))}
         </section>
     );

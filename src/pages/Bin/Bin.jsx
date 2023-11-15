@@ -50,9 +50,8 @@ export const Bin = () => {
                         </section>
                         <div className={cl.bin__list}>
                             {binData.map((item, index) => (
-                                <div className={cl.wrappTest}>
+                                <div className={cl.wrappTest} key={index}>
                                     <CardProduct
-                                        index={index}
                                         item={item}
                                         img={item.product_id}
                                         name={item.name}
@@ -61,6 +60,7 @@ export const Bin = () => {
                                         count={item.countProduct}
                                         setBinData={setBinData}
                                         binData={binData}
+                                        key={index}
                                     />
                                 </div>
                             ))}

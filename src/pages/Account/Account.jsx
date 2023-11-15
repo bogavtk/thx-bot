@@ -53,7 +53,7 @@ export const Account = () => {
 
                 <div className={cl.infoBlock}>
                     <svg width="18" height="21" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1.2 3.5H16.8C17.2758 3.5 17.5 3.80534 17.5 4V20C17.5 20.1947 17.2758 20.5 16.8 20.5H1.2C0.724171 20.5 0.5 20.1947 0.5 20V4C0.5 3.80534 0.724171 3.5 1.2 3.5Z" stroke="#037EE5" stroke-linejoin="round"/>
+                        <path d="M1.2 3.5H16.8C17.2758 3.5 17.5 3.80534 17.5 4V20C17.5 20.1947 17.2758 20.5 16.8 20.5H1.2C0.724171 20.5 0.5 20.1947 0.5 20V4C0.5 3.80534 0.724171 3.5 1.2 3.5Z" stroke="#037EE5" strokeLinejoin="round"/>
                         <path d="M6.5 1V4M12.5 1V4M3.5 8.5H13.5M3.5 12.5H11.5M3.5 16.5H9.5" stroke="#037EE5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                     <div className={cl.infoRow}>

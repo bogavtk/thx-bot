@@ -155,7 +155,7 @@ export const Item = () => {
                 <ul className={cl.item__sizes}>
                     {itemData.sizes.map((size, i) => {
                         return (
-                            <Size size={size} card={card}/>
+                            <Size size={size} card={card} key={i}/>
                         )
                     })}
                 </ul>
