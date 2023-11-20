@@ -8,7 +8,7 @@ export const Size = ({size, card}) => {
     function handleCLickSize() {
         //добавляю, какие размеры выбрал пользователь
         setStateSize(!stateSize)
-        localStorage.setItem(size.size, !stateSize)
+        localStorage.setItem(size, !stateSize)
     }
 
 
@@ -20,12 +20,12 @@ export const Size = ({size, card}) => {
         <li
             className={classNames( {
                 [cl.blockSize]: true,
-                [cl.blocked]: !size.isRetain,
+                // [cl.blocked]: !size.isRetain,
                 [cl.choose]: stateSize,
             })}
             onClick={handleCLickSize}
         >
-            {size.size}</li>
+            {size}</li>
     );
 };
 

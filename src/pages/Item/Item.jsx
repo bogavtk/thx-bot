@@ -30,25 +30,8 @@ export const Item = () => {
     const itemID = parseInt(id, 10);
 
     const [card, setCard] = useState([])
+    const [sizes, setSizes] = useState([])
 
-
-    const itemData = {
-        sizes: [
-            {
-                size: 36,
-                isRetain: true
-            },
-            {
-                size: 37,
-                isRetain: true
-            },
-            {
-                size: 38,
-                isRetain: false
-            },
-        ],
-
-    }
 
     const [isStorageEmpty, setIsStorageEmpty] = useState(true);
 
@@ -69,14 +52,19 @@ export const Item = () => {
                 return item.product_id === itemID
             })
             setCard(newCard)
+
+            setSizes(newCard.sizes)
+
         })
 
     }, []);
 
+    console.log(sizes)
+
 
     const handleButtonClick = (event) => {
         //Здесь проверяю, какие размеры выбрал пользователь
-        itemData.sizes.forEach((elem) => {
+        sizes.forEach((elem) => {
             if (localStorage.getItem(elem.size)) {
                 const sizeNumber = JSON.parse(localStorage.getItem(elem.size))
                 if (sizeNumber) {
@@ -148,7 +136,7 @@ export const Item = () => {
             <section className={cl.item__block_sizes}>
                 <p>Размеры</p>
                 <ul className={cl.item__sizes}>
-                    {itemData.sizes.map((size, i) => {
+                    {sizes.map((size, i) => {
                         return (
                             <Size size={size} card={card} key={i}/>
                         )
