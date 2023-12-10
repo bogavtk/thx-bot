@@ -1,3 +1,11 @@
+.App{
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 10px 8px;
+    background-color: #F7F7F7;
+    position: relative;
+}
+
 .home{
     position: relative
 }

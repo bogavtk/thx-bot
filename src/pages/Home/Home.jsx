@@ -9,6 +9,7 @@ import {ListProduct} from "./ListProduct/ListProduct";
 import axios, * as others from 'axios';
 import {getImageProduct, getProduct} from "../../api/api";
 import {IArrowRight, IFilter} from "../../assets/icons";
+import {Footer} from "../../components/Footer/Footer";
 
 
 
@@ -87,7 +88,7 @@ export const Home = () => {
     }, [])
 
     return (
-        <>
+        <div className={cl.App}>
             <main className={cl.home}>
                 <section className={cl.home__header}>
                     <SearchBar inputHandler={inputHandler}/>
@@ -116,8 +117,9 @@ export const Home = () => {
 
                 <div className={cl.wrapperFixedButton}>
                     <BottomButton link={'/bin'} text="Корзина"/>
+                    <Footer/>
                 </div>
             </main>
-        </>
+        </div>
     );
 };

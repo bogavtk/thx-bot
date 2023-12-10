@@ -11,23 +11,26 @@ import {Orders} from "./pages/Orders/Orders";
 import {Order} from "./pages/Order/Order";
 import {AboutUs} from "./pages/AboutUs/AboutUs";
 import {AboutInfo} from "./pages/AboutInfo/AboutInfo";
+import cl from './App.module.css'
 
 export const App = () => {
-  return (
-      <Routes>
-        <Route path="/" element={<Layout/>} >
-            <Route path="" element={<Home />} />
-            <Route path="bin" element={< Bin/>} />
-            <Route path="item/:id" element={<Item />} />
-            <Route path="filter" element={<FilterPage/>}/>
-            <Route path="category" element={<CategoryPage/>}/>
-            <Route path="account" element={<Account/>}/>
-            <Route path="orders" element={<Orders/>}/>
-            <Route path="order/:id" element={<Order/>}/>
-            <Route path="about" element={<AboutUs/>}/>
-            <Route path="aboutInfo" element={<AboutInfo/>}/>
-        </Route>
+    return (
+        <Routes>
+            <Route path="/" element={<Layout/>}>
+                <Route path="bin" element={< Bin/>}/>
+                <Route path="item/:id" element={<Item/>}/>
+                <Route path="filter" element={<FilterPage/>}/>
+                <Route path="category" element={<CategoryPage/>}/>
+                <Route path="account" element={<Account/>}/>
+                <Route path="orders" element={<Orders/>}/>
+                <Route path="order/:id" element={<Order/>}/>
+                <Route path="about" element={<AboutUs/>}/>
+                <Route path="aboutInfo" element={<AboutInfo/>}/>
+            </Route>
 
-      </Routes>
-  );
+            <Route path="home" element={<Home/>}/>
+
+
+        </Routes>
+    );
 }
