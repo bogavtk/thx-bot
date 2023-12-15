@@ -16,7 +16,7 @@ import cl from './App.module.css'
 export const App = () => {
     return (
         <Routes>
-            <Route path="/" element={<Layout/>}>
+            <Route path="/" element={<Layout/>} >
                 <Route path="bin" element={< Bin/>}/>
                 <Route path="item/:id" element={<Item/>}/>
                 <Route path="filter" element={<FilterPage/>}/>
