@@ -12,7 +12,7 @@ import {IArrowRight, IFilter} from "../../assets/icons";
 import {Footer} from "../../components/Footer/Footer";
 
 
-
+//Это бот для Рафа
 export const Home = () => {
     const [isStorageEmpty, setIsStorageEmpty] = useState(true);
     const [dataProduct, setDataProduct] = useState([])
