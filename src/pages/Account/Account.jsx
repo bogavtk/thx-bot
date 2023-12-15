@@ -31,14 +31,14 @@ export const Account = () => {
                     <img src={vec} alt={'Иконка бонусов'}/>
                     <div className={cl.infoRow}>
                         <span className={cl.nameInfoRow}>Бонусов</span>
-                        <span className={cl.detailInfoRow}>500</span>
+                        <span className={cl.detailInfoPink}>500</span>
                     </div>
                 </div>
                 <div className={cl.infoBlock}>
                     <ILoyal/>
                     <div className={cl.infoRow}>
                         <span className={cl.nameInfoRow}>Уровень лояльности</span>
-                        <span className={cl.detailInfoRow}>Любитель</span>
+                        <span className={cl.detailInfoPink}>Любитель</span>
                     </div>
                 </div>
                 <div className={cl.infoBlock}>
