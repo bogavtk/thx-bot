@@ -1,6 +1,6 @@
 import axios, * as others from 'axios';
 
-axios.defaults.baseURL = 'https://thx-api-server.ru'
+axios.defaults.baseURL = 'https://thx-api-server.ru/raf'
 
 export const getProduct = async () => {
     try {
@@ -12,6 +12,6 @@ export const getProduct = async () => {
 }
 
 export const getSrcImageProduct = (id) => {
-    const src = `https://thx-api-server.ru/product_image/${id}`
+    const src = `https://thx-api-server.ru/raf/product_image/${id}`
     return src
 }
