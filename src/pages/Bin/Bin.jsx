@@ -31,7 +31,7 @@ export const Bin = () => {
                     ?
                     <>
                         <section className={cl.bin__header}>
-                            <div className={cl.bin_back} onClick={() => navigate('/')}>
+                            <div className={cl.bin_back} onClick={() => navigate('/home')}>
                                 <IArrowLeft/>
                                 <h4>Корзина</h4>
                             </div>
@@ -72,7 +72,7 @@ export const Bin = () => {
                     <div className={cl.noOrders}>
                         <img src={noorders}/>
                         <span>У вас пока нет заказов</span>
-                        <BottomButton link={'/'} text={'Назад'}/>
+                        <BottomButton link={'/home'} text={'Назад'}/>
                     </div>
             }
         </main>

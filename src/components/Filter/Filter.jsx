@@ -22,8 +22,8 @@ export const Filter = ({namePage, listFilters}) => {
                 </div>
             </div>
             <div className={cl.footerButton}>
-                <BottomButton text={'Назад'} link={'/'} removeFilter={removeFilter}/>
-                <BottomButton text={'Посмотреть'} link={'/'}/>
+                <BottomButton text={'Назад'} link={'/home'} removeFilter={removeFilter}/>
+                <BottomButton text={'Посмотреть'} link={'/home'}/>
             </div>
         </main>
     );
