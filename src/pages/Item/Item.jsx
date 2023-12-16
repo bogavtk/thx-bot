@@ -104,7 +104,7 @@ export const Item = () => {
 
     return (
         <main className={cl.item}>
-            <div className={cl.item_back} onClick={() => navigate('/')}>
+            <div className={cl.item_back} onClick={() => navigate('/home')}>
                 <IArrowLeft/>
             </div>
 

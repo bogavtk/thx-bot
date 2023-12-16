@@ -41,7 +41,7 @@ export const Order = () => {
                 </div>
 
             </div>
-            <BottomButton text={'Повторить заказ'} link={'/'}/>
+            <BottomButton text={'Повторить заказ'} link={'/home'}/>
             <hr className={cl.customHR}/>
             <div className={cl.productsOrder}>
                 <span>Детали заказы</span>
